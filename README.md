@@ -20,7 +20,7 @@ The simplest use case is to run the executable without any switches.
 stay-awake.exe
 ```
 
-This will prevent the machine from going to sleep and will await ``Enter`` to be pressed within the terminal before resetting the machine state.
+This will prevent the machine from going to sleep and will await an ``Enter`` press within the terminal before resetting the machine state.
 
 #### Details
 
