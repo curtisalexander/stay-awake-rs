@@ -97,11 +97,11 @@ pub fn run(args: Args) -> Result<(), Box<dyn Error>> {
     // args
     let req_thread_exec_state = match &args.awake_mode {
         AwakeMode::Display => {
-            println!("Running in ``{}`` mode ==> meaning the machine will not go to sleep and the display will remain on", Color::Green.paint("Display"));
+            println!("Running in ``{}`` mode ==> the machine will not go to sleep and the display will remain on", Color::Green.paint("Display"));
             ExecutionState::ES_DISPLAY_REQUIRED
         },
         AwakeMode::System => {
-            println!("Running in ``{}`` mode ==> meaning the machine will not go to sleep", Color::Green.paint("System"));
+            println!("Running in ``{}`` mode ==> the machine will not go to sleep", Color::Green.paint("System"));
             ExecutionState::ES_SYSTEM_REQUIRED 
         }
     };
