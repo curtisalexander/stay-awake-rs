@@ -11,7 +11,7 @@ use structopt::StructOpt;
 extern crate bitflags;
 
 #[derive(StructOpt, Debug)]
-#[structopt(about = "stay awake ==> keep a Windows machine awake")]
+#[structopt(about = "keep a Windows machine awake")]
 pub struct Args {
     /// Awake mode
     #[structopt(long, short, default_value = "System", possible_values = &AwakeMode::variants(), case_insensitive = true)]
