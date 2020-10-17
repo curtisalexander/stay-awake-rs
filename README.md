@@ -8,9 +8,19 @@ Executable binaries for Windows may be found at the [Release](https://github.com
 
 ### Usage
 
-The intended use of `stay-awake.exe` is to run in a terminal in order to keep your Windows machine awake.  There are two modes one may choose from:
+The executable `stay-awake.exe` is intended to run in a terminal in order to keep one's Windows machine awake.
+
+There are two modes one may choose from:
 - **System** [Default] &rarr; the machine will not go to sleep but the display could still turn off
 - **Display** &rarr; the machine will not go to sleep and the display will remain on
+
+The simplest use case is to simply run the executable without any switches.
+
+```pwsh
+stay-awake.exe
+```
+
+This will prevent the machine from going to sleep and will await ``Enter`` to be pressed within the terminal before resetting the machine state.
 
 ```
 stay-awake 0.2.0
