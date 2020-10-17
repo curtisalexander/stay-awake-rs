@@ -1,7 +1,7 @@
 # stay-awake-rs
 Keep a Windows machine awake
 
-![stay-awake workflow](https://github.com/curtisalexander/stay-awake-rs/workflows/Rust/badge.svg)
+![stay-awake workflow](https://github.com/curtisalexander/stay-awake-rs/workflows/stay%2Dawake/badge.svg)
 
 ### Testing
 In order to test, open PowerShell with elevated (admin) privileges. After executing the program, run the following.
