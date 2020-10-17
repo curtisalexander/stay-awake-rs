@@ -1,7 +1,7 @@
-name: Rust
+name: stay awake
 
 env:
-    PACKAGE_NAME: stay-awake
+    package_name: stay-awake
 
 on:
   push:
@@ -24,13 +24,13 @@ jobs:
               uses: actions-rs/toolchain@v1
               with:
                 toolchain: stable
-                target: ${{ env.target }}
+                target: ${{ env.TARGET }}
                 default: true
                 override: true
             - name: Build
               run: cargo build --release
             - name: Zip
-              run: Compress-Archive -Path target\release\${{ env.PACKAGE_NAME }}.exe -DestinationPath target\release\${{ env.PACKAGE_NAME }}-${{ steps.get_version.outputs.VERSION }}-${{ env.target }}.zip  -CompressionLevel Optimal
+              run: Compress-Archive -Path target\release\${{ env.PACKAGE_NAME }}.exe -DestinationPath target\release\${{ env.PACKAGE_NAME }}-${{ steps.get_version.outputs.VERSION }}-${{ env.TARGET }}.zip  -CompressionLevel Optimal
               shell: powershell
             - name: Build
               uses: actions-rs/cargo@v1
@@ -42,6 +42,6 @@ jobs:
               if: startsWith(github.ref, 'refs/tags/')
               with:
                 files: |
-                  target\release\${{ env.PACKAGE_NAME }}-${{ steps.get_version.outputs.VERSION }}-${{ env.target }}.zip
+                  target\release\${{ env.PACKAGE_NAME }}-${{ steps.get_version.outputs.VERSION }}-${{ env.TARGET }}.zip
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
