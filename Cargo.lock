@@ -123,8 +123,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "stay-awake-rs"
-version = "0.1.0"
+name = "stay-awake"
+version = "0.2.0"
 dependencies = [
  "ansi_term 0.12.1",
  "bitflags",

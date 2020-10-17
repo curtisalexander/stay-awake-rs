@@ -1,6 +1,6 @@
 [package]
-name = "stay-awake-rs"
-version = "0.1.0"
+name = "stay-awake"
+version = "0.2.0"
 authors = ["Curtis Alexander <calex@calex.org>"]
 edition = "2018"
 
