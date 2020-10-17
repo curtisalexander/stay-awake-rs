@@ -88,7 +88,7 @@ impl Drop for StayAwake {
             "\nReset thread execution state:\n    {} ==> {}\n      {} ==> {}",
             Color::Red.paint("From"),
             prev_thread_exec_state,
-            Color::Cyan.paint("To"),
+            Color::Blue.paint("To"),
            next_thread_exec_state);
     }
 }
@@ -122,7 +122,7 @@ pub fn run(args: Args) -> Result<(), Box<dyn Error>> {
         "\nSet thread execution state:\n    {} ==> {}\n      {} ==> {}",
         Color::Purple.paint("From"),
         prev_thread_exec_state,
-        Color::Blue.paint("To"),
+        Color::Cyan.paint("To"),
         next_thread_exec_state
     );
 
