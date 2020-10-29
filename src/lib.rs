@@ -55,6 +55,7 @@ impl fmt::Display for ExecutionState {
         write!(f, "{:#?} ({:#X})", &self, &self)
     }
 }
+
 // External functions
 extern "stdcall" {
     fn LoadLibraryA(name: *const u8) -> HModule;
@@ -89,7 +90,7 @@ impl Drop for StayAwake {
             Color::Red.paint("From"),
             prev_thread_exec_state,
             Color::Blue.paint("To"),
-           next_thread_exec_state);
+            next_thread_exec_state);
     }
 }
 
@@ -126,7 +127,7 @@ pub fn run(args: Args) -> Result<(), Box<dyn Error>> {
         next_thread_exec_state
     );
 
-    print!("\nPress ``{}`` key to reset ", Color::Yellow.paint("Enter"));
+    print!("\nPress ``{}`` key to reset ", Color::Yellow.paint("any"));
     io::stdout().flush().unwrap();
 
     let mut buffer = String::new();
