@@ -3,10 +3,10 @@ Keep a Windows machine awake
 
 ![stay-awake workflow](https://github.com/curtisalexander/stay-awake-rs/workflows/stay%20awake/badge.svg)
 
-### Get
+## Get
 Executable binaries for Windows may be found at the [Release](https://github.com/curtisalexander/stay-awake-rs/releases) page.
 
-### Usage
+## Usage
 
 The executable `stay-awake.exe` is intended to be run in a terminal in order to keep one's Windows machine awake.
 
@@ -22,7 +22,10 @@ stay-awake.exe
 
 This will prevent the machine from going to sleep and will await an ``Enter`` press within the terminal before resetting the machine state.
 
-#### Details
+> **NOTE:** As noted in the [Win32 documentation](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate), use of the `SetThreadExecutionState` function (which is the Win32 function called within `stay-awake`) does not prevent one from putting their computer to sleep by either closing the lid on their laptop or pressing the power button.  In addition, the screen saver may still execute.
+
+### Details
+Result of running `stay-awake --help`
 
 ```
 stay-awake 0.2.0
@@ -39,20 +42,20 @@ OPTIONS:
     -a, --awake-mode <awake-mode>    Awake mode [default: System]  [possible values: Display, System]
 ```
 
-### Testing
+## Testing
 In order to test, open PowerShell with elevated (admin) privileges. After executing the program, run the following.
 
 ```pwsh
 powercfg -requests
 ```
 
-### Win32 Docs
+## Win32 Docs
 > https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate
 
-### Inspiration
+## Inspiration
 Following along with Amos's ping series:
 > https://fasterthanli.me/series/making-our-own-ping 
 
-### See Also
+## See Also
 Created an earlier version in `C#`
 > https://github.com/curtisalexander/stay-awake-cs
