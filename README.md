@@ -28,7 +28,7 @@ This will prevent the machine from going to sleep and will await an ``Enter`` pr
 Result of running `stay-awake --help`
 
 ```
-stay-awake 0.2.0
+stay-awake 0.2.1
 stay awake ==> keep a Windows machine awake
 
 USAGE:
