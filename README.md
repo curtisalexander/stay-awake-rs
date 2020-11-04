@@ -20,7 +20,7 @@ The simplest use case is to run the executable without any switches.
 stay-awake.exe
 ```
 
-This will prevent the machine from going to sleep and will await an ``Enter`` press within the terminal before resetting the machine state.
+This will prevent the machine from going to sleep and will await any key press within the terminal before resetting the machine state.
 
 > **NOTE:** As noted in the [Win32 documentation](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate), use of the `SetThreadExecutionState` function (which is the Win32 function called within `stay-awake`) does not prevent one from putting their computer to sleep by either closing the lid on their laptop or pressing the power button.  In addition, the screen saver may still execute.
 
