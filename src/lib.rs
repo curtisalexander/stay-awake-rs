@@ -1,4 +1,4 @@
-use ansi_term::Color;
+use colored::Colorize;
 use std::error::Error;
 use std::ffi::c_void;
 use std::fmt;
@@ -87,9 +87,9 @@ impl Drop for StayAwake {
         let prev_thread_exec_state = (self.ste)(next_thread_exec_state);
         println!(
             "\nReset thread execution state:\n    {} ==> {}\n      {} ==> {}",
-            Color::Red.paint("From"),
+            String::from("From").red(),
             prev_thread_exec_state,
-            Color::Blue.paint("To"),
+            String::from("To").blue(),
             next_thread_exec_state);
     }
 }
@@ -98,11 +98,11 @@ pub fn run(args: Args) -> Result<(), Box<dyn Error>> {
     // args
     let req_thread_exec_state = match &args.awake_mode {
         AwakeMode::Display => {
-            println!("Running in ``{}`` mode ==> the machine will not go to sleep and the display will remain on", Color::Green.paint("Display"));
+            println!("Running in ``{}`` mode ==> the machine will not go to sleep and the display will remain on", String::from("Display").green());
             ExecutionState::ES_DISPLAY_REQUIRED
         },
         AwakeMode::System => {
-            println!("Running in ``{}`` mode ==> the machine will not go to sleep", Color::Green.paint("System"));
+            println!("Running in ``{}`` mode ==> the machine will not go to sleep", String::from("System").green());
             ExecutionState::ES_SYSTEM_REQUIRED 
         }
     };
@@ -121,13 +121,13 @@ pub fn run(args: Args) -> Result<(), Box<dyn Error>> {
     // print
     println!(
         "\nSet thread execution state:\n    {} ==> {}\n      {} ==> {}",
-        Color::Purple.paint("From"),
+        String::from("From").purple(),
         prev_thread_exec_state,
-        Color::Cyan.paint("To"),
+        String::from("To").cyan(),
         next_thread_exec_state
     );
 
-    print!("\nPress ``{}`` key to reset ", Color::Yellow.paint("any"));
+    print!("\nPress ``{}`` key to reset ", String::from("any").yellow());
     io::stdout().flush().unwrap();
 
     let mut buffer = String::new();
