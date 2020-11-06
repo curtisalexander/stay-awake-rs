@@ -127,7 +127,7 @@ pub fn run(args: Args) -> Result<(), Box<dyn Error>> {
         next_thread_exec_state
     );
 
-    print!("\nPress ``{}`` key to reset ", String::from("any").yellow());
+    print!("\nPress ``{}`` key to reset ", String::from("Enter").yellow());
     io::stdout().flush().unwrap();
 
     let mut buffer = String::new();
